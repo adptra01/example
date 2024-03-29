@@ -24,7 +24,7 @@ class ParticipantRequest extends FormRequest
         return [
             'fullname' => 'required|min:6',
             'email' => 'required|email',
-            'whatsapp' => 'required|numeric|digits_between:11,13',
+            'whatsapp' => 'required|numeric',
             'gender' => 'required|in:laki-laki,perempuan',
             'blog_link' => 'required|url',
             'work_file' => 'required|file|max:5120|mimes:pdf,doc,docx',

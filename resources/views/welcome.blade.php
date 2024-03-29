@@ -196,15 +196,15 @@
             <div class="card my-3 rounded-4">
                 <div class="card-body">
                     <div class="mb-3">
-                        <label for="follow_sosmed" class="form-label">
+                        <label for="follows" class="form-label">
                             Bukti follow akun social media Ariston Indonesia
                         </label>
-                        <input type="file" class="form-control rounded-3" name="follow_sosmed[]"
-                            id="follow_sosmed" aria-describedby="follow_sosmedId" multiple />
+                        <input type="file" class="form-control rounded-3" name="follows[]" id="follows"
+                            aria-describedby="followsId" multiple />
 
                         <!-- Error follow sosmed -->
-                        @error('follow_sosmed')
-                            <small id="follow_sosmedId" class="form-text text-danger"> {{ $message }}
+                        @error('follows')
+                            <small id="followsId" class="form-text text-danger"> {{ $message }}
                             </small>
                         @enderror
                     </div>
