@@ -12,17 +12,25 @@ class ParticipantController extends Controller
     public function store(ParticipantRequest $request)
     {
         $validatedData = $request->validated();
-        $validatedData['work_file'] = $request->file('work_file')->store('documents', 'public');
+
+        $fileName = $request->file('work_file')->getClientOriginalName();
+        $fileName = str_replace(' ', '_', $fileName);
+        $validatedData['work_file'] = $request->file('work_file')->storeAs('documents', $fileName, 'public');
 
         $participant = Participant::create($validatedData);
 
-        foreach ($request->file('follows') as $file) {
-            $follow = new Follow();
-            $follow->image = $file->store('follows');
-            $follow->participant_id = $participant->id;
-            $follow->save();
+        if ($request->hasFile('follows')) {
+            foreach ($request->file('follows') as $file) {
+                $follow = new Follow();
+                $followFileName = $file->getClientOriginalName();
+                $followFileName = str_replace(' ', '_', $followFileName);
+                $follow->image = $file->storeAs('follows', $followFileName, 'public');
+                $follow->participant_id = $participant->id;
+                $follow->save();
+            }
         }
 
-        return back();
+        return back()->with('success', 'Pengisian form berhasil');
     }
+    
 }
