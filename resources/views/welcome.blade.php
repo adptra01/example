@@ -33,18 +33,16 @@
         }
 
         /* Media Query untuk layar desktop dengan lebar minimal 1200px */
-        @media only screen and (min-width: 1200px) {
+        @media only screen and (min-width: 1024px) {
             body {
                 padding: 0 300px;
-                /* Padding 300px untuk layar desktop */
             }
         }
 
         /* Media Query untuk ukuran layar lainnya */
-        @media only screen and (max-width: 1199px) {
+        @media only screen and (max-width: 1023px) {
             body {
                 padding: 0 5px;
-                /* Padding yang sesuai untuk ukuran layar lainnya */
             }
         }
     </style>
@@ -53,7 +51,7 @@
 
 <body>
 
-    <div class="container p-5">
+    <div class="container pt-5">
         <form action="{{ route('participant.post') }}" method="post" enctype="multipart/form-data">
             @csrf
 
@@ -64,32 +62,6 @@
                     </h3>
                 </div>
             </div>
-
-            @if ($errors->any())
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <strong>Error:</strong>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @elseif (session('success'))
-                <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <strong>Alert Heading</strong> {{ session('success') }}
-                </div>
-
-                <script>
-                    var alertList = document.querySelectorAll(".alert");
-                    alertList.forEach(function(alert) {
-                        new bootstrap.Alert(alert);
-                    });
-                </script>
-
-            @endif
-
 
             <div class="card my-3 rounded-4">
                 <div class="card-body">
@@ -260,7 +232,7 @@
                 <div class="card-body">
                     <div class="d-grid">
                         <button type="submit" class="btn btn-danger">
-                            Submit
+                            SUBMIT
                         </button>
                     </div>
                 </div>
@@ -368,15 +340,16 @@
 
                     </section>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Close
+                <div class="container d-grid">
+                    <button type="button" class="btn btn-danger mb-3" data-bs-dismiss="modal">
+                        CONFIRM
                     </button>
-                    <button type="button" class="btn btn-primary">Save</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -386,6 +359,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
     </script>
+
+    @include('sweetalert::alert')
 </body>
 
 </html>

@@ -6,6 +6,7 @@ use App\Http\Requests\ParticipantRequest;
 use App\Models\Follow;
 use App\Models\Participant;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ParticipantController extends Controller
 {
@@ -29,8 +30,8 @@ class ParticipantController extends Controller
                 $follow->save();
             }
         }
+        Alert::success('Completed', 'Formulir telah berhasil disubmit.')->showConfirmButton('CONFIRM', '#dc3545');
 
-        return back()->with('success', 'Pengisian form berhasil');
+        return back();
     }
-    
 }
