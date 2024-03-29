@@ -44,7 +44,6 @@
 
     @stack('css')
 
-    @vite([])
 </head>
 
 <body>
