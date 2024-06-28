@@ -30,7 +30,7 @@ class ParticipantController extends Controller
                 $follow->save();
             }
         }
-        Alert::success('Completed', 'Formulir telah berhasil disubmit.')->showConfirmButton('CONFIRM', '#dc3545');
+        Alert::success('Completed', 'Formulir telah berhasil disubmit.')->showConfirmButton('CONFIRM', '#E17126');
 
         return back();
     }
