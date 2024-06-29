@@ -1,5 +1,6 @@
 <x-guest-layout>
-    <x-slot name="title">Thrive Blog Competition 2024
+    <x-slot name="title">
+        Thrive Blog Competition 2024
     </x-slot>
     <form action="{{ route('participant.post') }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -13,7 +14,7 @@
 
                     <!-- Error fullname -->
                     @error('fullname')
-                        <small id="emailId" class="form-text text-custom"> {{ $message }} </small>
+                        <small id="emailId" class="form-text color-custom"> {{ $message }} </small>
                     @enderror
                 </div>
             </div>
@@ -28,7 +29,7 @@
 
                     <!-- Error email -->
                     @error('email')
-                        <small id="emailId" class="form-text text-custom"> {{ $message }} </small>
+                        <small id="emailId" class="form-text color-custom"> {{ $message }} </small>
                     @enderror
                 </div>
             </div>
@@ -45,11 +46,12 @@
 
                     <!-- Error whatsappp -->
                     @error('whatsapp')
-                        <small id="whatsappId" class="form-text text-custom"> {{ $message }} </small>
+                        <small id="whatsappId" class="form-text color-custom"> {{ $message }} </small>
                     @enderror
                 </div>
             </div>
         </div>
+
 
         <div class="card my-3 border-0">
             <div class="card-body">
@@ -61,7 +63,7 @@
 
                     <!-- Error email -->
                     @error('blog_link')
-                        <small id="blog_linkId" class="form-text text-custom"> {{ $message }} </small>
+                        <small id="blog_linkId" class="form-text color-custom"> {{ $message }} </small>
                     @enderror
                 </div>
 
@@ -71,25 +73,26 @@
         <div class="card my-3 border-0">
             <div class="card-body">
                 <div class="mb-3">
-                    <label for="work_file" class="form-label">
+                    <label for="document" class="form-label">
                         Upload karya tulis dalam bentuk file
                     </label>
-                    <input type="file" class="form-control rounded-3" name="work_file" id="work_file"
-                        aria-describedby="work_fileId" />
+                    <input type="file" class="form-control rounded-3" name="document" id="document"
+                        aria-describedby="documentId" />
 
-                    <!-- Error work_file -->
-                    @error('work_file')
-                        <small id="work_fileId" class="form-text text-custom"> {{ $message }} </small>
+                    <!-- Error document -->
+                    @error('document')
+                        <small id="documentId" class="form-text color-custom"> {{ $message }} </small>
                     @enderror
 
                 </div>
-                <small class="form-text text-muted m-0">Upload File Maks 5 MB (format .pdf, .doc atau
-                    .docx)</small>
-                <small class="form-text text-muted m-0">Teknis penamaan file :
-                    Judul Karya Tulis_Nama Lengkap Peserta_Nomor Telepon/HP</small>
-                <small class="form-text text-muted m-0">Contoh: Fakta dan Mitos tentang Mandi Air
-                    Hangat
-                    saat Demam_Thrive_0800000000</small>
+                <small class="form-text text-muted m-0">
+                    <strong>Upload File Maks 5 MB</strong> (format .pdf, .doc atau .docx)
+                    <br>
+                    <strong>Teknis penamaan file :</strong>
+                    Judul Karya Tulis_Nama Lengkap Peserta_Nomor Telepon/HP
+                    <br>
+                    <strong>Contoh:</strong> Makin Produktif dengan ET PC Desktop Workstation_Thrive_08xx-xxxx-xxxx
+                </small>
             </div>
         </div>
 
@@ -104,12 +107,19 @@
 
                     <!-- Error follow sosmed -->
                     @error('follows')
-                        <small id="followsId" class="form-text text-custom"> {{ $message }}
+                        <small id="followsId" class="form-text color-custom"> {{ $message }}
                         </small>
                     @enderror
                 </div>
-                <small class="form-text text-muted m-0">Upload File Maks 5 MB (format .pdf, .jpg atau
-                    .jpeg)</small>
+                <small class="form-text text-muted m-0">
+                    <strong>Upload File Maks 5 MB</strong> (format .pdf, .jpg atau
+                    .jpeg)
+                    <br>
+                    <strong>Teknis penamaan file:</strong> Bukti follow_Nama Sosial Media_Akun Sosial Media Thrive_Nama
+                    Lengkap
+                    <br>
+                    <strong>Contoh:</strong> Bukti follow_Tiktok_@thrive.itsolutions_Thrive
+                </small>
             </div>
         </div>
 
@@ -118,10 +128,10 @@
                 <div class="mb-3">
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="agreement" required>
-                        <label class="form-check-label" for="agreement">
+                        <input class="form-check-input" type="checkbox" id="requirements" required>
+                        <label class="form-check-label" for="requirements">
                             Saya sudah membaca dan menyetujui
-                            <a class="text-custom text-decoration-none" data-bs-toggle="modal"
+                            <a class="color-custom text-decoration-none" data-bs-toggle="modal"
                                 data-bs-target="#modalId">syarat dan
                                 ketentuan yang berlaku.</a>
                         </label>
@@ -131,13 +141,21 @@
                 <div class="mb-3">
                     <p>Dan menyatakan :</p>
                     <ol>
-                        <li>Keikutsertaan dalam Thrive Indonesia Blog Competition 2024</li>
-                        <li>Mematuhi segala peraturan dan ketentuan yang telah ditetapkan oleh Thrive Blog Competition
-                            2024</li>
-                        <li>Menyerahkan karya original milik sendiri untuk dapat disertakan pada Thrive Blog Competition
-                            2024</li>
-                        <li>Bertanggung jawab penuh atas karya sendiri yang diikutsertakan pada Thrive Blog Competition
-                            2024</li>
+                        <li>
+                            Keikutsertaan dalam Thrive Indonesia Blog Competition 2024
+                        </li>
+                        <li>
+                            Mematuhi segala peraturan dan ketentuan yang telah ditetapkan oleh Thrive Blog Competition
+                            2024
+                        </li>
+                        <li>
+                            Menyerahkan karya original milik sendiri untuk dapat disertakan pada Thrive Blog Competition
+                            2024
+                        </li>
+                        <li>
+                            Bertanggung jawab penuh atas karya sendiri yang diikutsertakan pada Thrive Blog Competition
+                            2024
+                        </li>
                     </ol>
                 </div>
             </div>
@@ -146,11 +164,13 @@
         <div class="card my-3 border-0">
             <div class="card-body">
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-outline-light">
+                    <button type="submit" class="btn btn-light color-custom">
                         SUBMIT
                     </button>
                 </div>
             </div>
         </div>
     </form>
+
+    @include('modal-requirements')
 </x-guest-layout>
