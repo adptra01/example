@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap');
 
+.title {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
@@ -7,7 +13,6 @@ body {
     font-style: normal;
 
     /* font-size: 16px;
-    font-weight: 400;
     background: url('/background-form.png');
     height: 100vh;
     width: 100%;
@@ -23,25 +28,20 @@ body {
 	height: 100vh; */
 }
 
-.title {
-    font-family: "DM Serif Display", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-
+/* animation gradiant background body */
 /* @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 } */
 
+/* style glassmorphism card */
   .card {
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0.2);
@@ -55,7 +55,6 @@ body {
 /* Gaya default untuk layar kecil */
 .border-responsive {
     border: 1px solid transparent;
-
     /* Default border untuk layar kecil */
 }
 
@@ -63,28 +62,6 @@ body {
     font-size: 1rem;
     /* Ukuran font untuk layar kecil */
 }
-
-.btn-custom {
-    --bs-btn-color: #fff;
-    --bs-btn-bg: #e17126;
-    --bs-btn-border-color: #e88543;
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #ECB151;
-    --bs-btn-hover-border-color: #ECB151;
-    --bs-btn-focus-shadow-rgb: 225, 83, 97;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #DBB67E;
-    --bs-btn-active-border-color: #ECB151;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #dc3545;
-    --bs-btn-disabled-border-color: #dc3545;
-}
-
-.color-custom {
-    color: #E17126;
-}
-
 
 /* Gaya untuk layar lebih besar (desktop) */
 @media (min-width: 768px) {
@@ -105,6 +82,7 @@ body {
     }
 }
 
+/* style background body */
 .box {
     position: relative;
 
@@ -175,4 +153,59 @@ body {
         right: -155px;
         z-index: 2;
     }
+}
+
+/* custom color btn */
+.color-custom {
+    color: #E17126;
+}
+
+.btn-custom {
+    color: #fff;
+    background-color: #E17126;
+    border-color: #E17126;
+}
+.btn-custom:hover {
+    color: #fff;
+    background-color: #ECB151;
+    border-color: #ECB151;
+}
+.btn-custom:focus, .btn-custom.focus {
+    color: #fff;
+    background-color: #ECB151;
+    border-color: #ECB151;
+    box-shadow: 0 0 0 0.2rem rgba(225, 113, 38, 0.5);
+}
+.btn-custom:active, .btn-custom.active, .show > .btn-custom.dropdown-toggle {
+    color: #fff;
+    background-color: #DBB67E;
+    border-color: #DBB67E;
+}
+.btn-custom:active:focus, .btn-custom.active:focus, .show > .btn-custom.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(225, 113, 38, 0.5);
+}
+
+.btn-outline-custom {
+    color: #E17126;
+    background-color: transparent;
+    border-color: #E17126;
+}
+.btn-outline-custom:hover {
+    color: #fff;
+    background-color: #E17126;
+    border-color: #E17126;
+}
+.btn-outline-custom:focus, .btn-outline-custom.focus {
+    color: #fff;
+    background-color: #E17126;
+    border-color: #E17126;
+    box-shadow: 0 0 0 0.2rem rgba(225, 113, 38, 0.5);
+}
+.btn-outline-custom:active, .btn-outline-custom.active, .show > .btn-outline-custom.dropdown-toggle {
+    color: #fff;
+    background-color: #DBB67E;
+    border-color: #DBB67E;
+}
+.btn-outline-custom:active:focus, .btn-outline-custom.active:focus, .show > .btn-outline-custom.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(225, 113, 38, 0.5);
 }

@@ -164,7 +164,7 @@
         <div class="card my-3 border-0">
             <div class="card-body">
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-light color-custom">
+                    <button type="submit" class="btn btn-custom">
                         SUBMIT
                     </button>
                 </div>
