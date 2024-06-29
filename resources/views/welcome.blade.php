@@ -37,39 +37,15 @@
         <div class="card my-3 border-0">
             <div class="card-body">
                 <div class="mb-3">
-                    <label for="whatsapp" class="form-label">No Whatsapp</label>
+                    <label for="whatsapp" class="form-label">
+                        No Whatsapp
+                    </label>
                     <input type="number" class="form-control rounded-3" value="{{ old('whatsapp') }}" name="whatsapp"
                         id="whatsapp" aria-describedby="whatsappId" placeholder="08xxxxxxxxx" />
 
                     <!-- Error whatsappp -->
                     @error('whatsapp')
                         <small id="whatsappId" class="form-text text-custom"> {{ $message }} </small>
-                    @enderror
-                </div>
-            </div>
-        </div>
-
-        <div class="card my-3 border-0">
-            <div class="card-body">
-                <label for="gender" class="form-label">Jenis Kelamin</label>
-                <div class="mb-3">
-                    <div class="form-check form-check-inline">
-
-                        <input class="form-check-input" type="radio" name="gender" id="gender1" value="laki-laki"
-                            checked>
-                        <label class="form-check-label" for="gender1">
-                            Laki-laki
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="perempuan" name="gender" id="gender2">
-                        <label class="form-check-label" for="gender2">
-                            Perempuan
-                        </label>
-                    </div>
-                    <!-- Error gender -->
-                    @error('gender')
-                        <small id="genderId" class="form-text text-custom"> {{ $message }} </small>
                     @enderror
                 </div>
             </div>
@@ -170,7 +146,7 @@
         <div class="card my-3 border-0">
             <div class="card-body">
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-custom">
+                    <button type="submit" class="btn btn-outline-light">
                         SUBMIT
                     </button>
                 </div>

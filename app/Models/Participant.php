@@ -11,7 +11,7 @@ class Participant extends Model
     use HasFactory;
 
     protected $fillable = [
-        'fullname', 'email', 'whatsapp', 'gender', 'blog_link', 'work_file'
+        'fullname', 'email', 'whatsapp', 'blog_link'
     ];
 
     /**
@@ -22,5 +22,15 @@ class Participant extends Model
     public function follows(): HasMany
     {
         return $this->hasMany(Follow::class);
+    }
+
+    /**
+     * Get all of the documents for the Competition
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function documents(): HasMany
+    {
+        return $this->hasMany(Document::class);
     }
 }
